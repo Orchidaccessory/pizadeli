@@ -80,12 +80,13 @@ header .cta:hover {
     text-align: center;
 }
 
-.navbar a:hover:not(.active) {
-    background-color: #111;
+/* Active Link Styles */
+.navbar a.active {
+    background-color: #04AA6D; /* Green when active */
 }
 
-.active {
-    background-color: #04AA6D;
+.navbar a:hover:not(.active) {
+    background-color: #111; /* Dark background on hover */
 }
 
 /* Menu and Section Styles */
@@ -191,5 +192,4 @@ footer {
     .menu-item {
         width: 220px;
     }
-
-    .m
+}
