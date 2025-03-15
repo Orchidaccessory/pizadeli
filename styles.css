@@ -1,13 +1,20 @@
+/* General Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Amatic SC", Arial, sans-serif;
+}
+
+/* Header Styles */
 header {
     background: url('backgroundpizza.jpg') no-repeat center center/cover;
     color: white;
@@ -37,18 +44,25 @@ header .cta:hover {
     background: darkred;
 }
 
+/* Navbar Styles */
+.navbar, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+}
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: black;
     padding: 15px;
     z-index: 1000;
 }
 
 .navbar ul {
-    list-style: none;
     display: flex;
     justify-content: center;
 }
@@ -61,8 +75,20 @@ header .cta:hover {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
 }
 
+.navbar a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+/* Menu and Section Styles */
 .menu-section, .about-section, .contact-section {
     padding: 50px 10%;
     text-align: center;
@@ -90,9 +116,80 @@ header .cta:hover {
     margin: 10px 0;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
     background: #333;
     color: white;
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    /* Navbar adjustments for smaller screens */
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Header text adjustments */
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    header .cta {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    /* Menu and Sections adjustments */
+    .menu-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+    .menu-item img {
+        height: 150px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Footer for mobile */
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Adjust the navbar and text size */
+    .navbar a {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    /* Make the menu items more compact */
+    .menu-items {
+        gap: 15px;
+    }
+
+    .menu-item {
+        width: 220px;
+    }
+
+    .m
